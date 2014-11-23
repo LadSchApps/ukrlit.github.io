@@ -28,7 +28,7 @@ $.fn.multimedia_portfolio = function(options) {
 		var titlesize = (def_element_width/366);
 		var ratio_largeur = ((elements.length*def_element_width - settings.width) / (elements.length*def_element_width));
 
-		$(this).css('width', def_element_width*elements.length);
+		if(def_element_width*elements.length > settings.width + 1) {$(this).css('width', def_element_width*elements.length);} else {$(this).css('width', settings.width);}
 		$(".portfolio-container").css("width", settings.width+'px');
 		$(".portfolio-container").css("height", portfolio_height+'px');
 		$(".portfolio-container").css("margin-top", -(portfolio_height / 2) + 12);
